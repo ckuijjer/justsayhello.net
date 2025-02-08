@@ -37,6 +37,23 @@
       type="image/x-icon"
     />
     <link rel="icon" href="/img/wave-180.webp" type="image/x-icon" />
+    <!-- css inline -->
+    <style>
+        /* Responsive Video Wrapper */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 640px; /* Adjust for desktop */
+            margin: auto;
+            overflow: hidden;
+            aspect-ratio: 16 / 9; /* Maintains video aspect ratio */
+        }
+        #player {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
   </head>
   <body>
     <div id="wholesite">
@@ -56,12 +73,10 @@
         </div>
       </div>
 
-      <!-- <div class="container">
-        <iframe src="https://www.youtube.com/embed/qV7PIUktTLw?autoplay=1&muted=1" allowFullScreen />
-      </div> -->
-
       <div class="container">
+      <div class="video-container">
       <div id="player"></div>
+      </div>
       </div>
 
 
@@ -78,7 +93,12 @@
                 playerVars: {
                     'autoplay': 0,
                     'mute': 1, // Start muted to allow autoplay
-                    'playsinline': 1
+                    'playsinline': 1,
+                    'loop': 1,
+                    'showinfo': 0, // Hide video title
+'modestbranding': 1, // Remove YouTube logo
+'rel': 0 // Prevent showing related videos at the end
+
                 },
                 events: {
                     'onReady': function(event) {
