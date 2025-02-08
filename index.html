@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>just say hello</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <!-- primary meta -->
+    <meta name="title" content="just say hello" />
+    <meta name="description" content="please just say hello in chat" />
+    <!-- opengraph/facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://justsayhello.net" />
+    <meta property="og:title" content="just say hello" />
+    <meta property="og:description" content="please just say hello in chat" />
+    <meta
+      property="og:image"
+      content="https://nohello.net/img/wave-500.webp"
+    />
+    <!-- twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://justsayhello.net/" />
+    <meta property="twitter:title" content="just say hello" />
+    <meta
+      property="twitter:description"
+      content="please just say hello in chat"
+    />
+    <meta
+      property="twitter:image"
+      content="https://justsayhello.net/img/wave-500.webp"
+    />
+    <!-- icons -->
+    <link rel="apple-touch-icon" href="/img/wave-180.webp" />
+    <link
+      rel="shortcut icon"
+      href="/img/wave-180.webp"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/img/wave-180.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="wholesite">
+      <div class="container">
+        <div class="hero">
+          <div id="plsstop">
+            <h1 class="name">
+              just say
+              <span id="strike">hello</span>
+            </h1>
+          </div>
+          <span class="subtitle">please just say hello in chat</span>
+          <h2 class="lead">
+            Imagine calling someone on the phone, and not just going
+            <em>hello!</em>... 🤦‍♀️
+          </h2>
+        </div>
+      </div>
+
+      <!-- <div class="container">
+        <iframe src="https://www.youtube.com/embed/qV7PIUktTLw?autoplay=1&muted=1" allowFullScreen />
+      </div> -->
+
+      <div class="container">
+      <div id="player"></div>
+      </div>
+
+
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: 'MafpEX22lQ8', // Replace with your YouTube video ID
+                playerVars: {
+                    'autoplay': 0,
+                    'mute': 1, // Start muted to allow autoplay
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': function(event) {
+                        event.target.playVideo();
+                    }
+                }
+            });
+        }
+    </script>
+ 
+  </body>
+</html>
