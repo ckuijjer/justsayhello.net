@@ -98,11 +98,20 @@
                     'playsinline': 1,
                     'loop': 1,
                     'enablejsapi': 1,
-                    'rel': 0 // Prevent showing related videos at the end
+                    'rel': 0, // Prevent showing personalized related videos at the end
+                    start: 56,
                 },
                 events: {
                     'onReady': function(event) {
                         event.target.playVideo();
+
+                        window.setInterval(() => {
+                          if (navigator.userActivation.hasBeenActive) {
+                            if (player.isMuted()) {
+                              player.unMute();
+                            }
+                          }
+                        }, 1000);
                     }
                 }
             });
